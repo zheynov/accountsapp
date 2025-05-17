@@ -1,0 +1,28 @@
+### Регистрация
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "Иван1 Петров",
+  "password": "password123",
+  "email": "ivan1.petrov@example.com",
+  "dateOfBirth": "1990-01-01T00:00:00"
+}
+
+### Аутентификация по email
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "ivan.petrov@example.com",
+  "password": "password123"
+}
+
+### Аутентификация по телефону
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "phone": "79201111111",
+  "password": "password123"
+}

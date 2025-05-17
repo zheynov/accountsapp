@@ -1,0 +1,9 @@
+### Перевод денег от одного пользователя к другому
+POST http://localhost:8080/accounts/transfer
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNzQ3NDg4MDk3LCJleHAiOjE3NDc1MjQwOTd9.hgz-9x_4NK62Qpu-Q-HXthN9smHo0yb_eNNQiPjMT70
+
+{
+  "toUserId": 2,
+  "amount": 50
+}

@@ -1,0 +1,46 @@
+### Добавить email
+POST http://localhost:8080/api/user/email
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNzQ3MTcwODg4LCJleHAiOjE3NDcyMDY4ODh9.rd8HsKlb6yuFZ2fqZBaGKKA1MWxpaN3I4_SlXcmoNwg
+Content-Type: application/json
+
+{
+  "email": "updated.ivan.petrov1@example.com"
+}
+
+### Изменить email
+PUT http://localhost:8080/api/user/email
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNzQ3MTU5MzQzLCJleHAiOjE3NDcxOTUzNDN9.h1SnCVKz73UTpxP3Q7K5ErFFiwov0QC52gD2meCA1-8
+Content-Type: application/json
+
+{
+  "oldEmail": "ivan.petrov@example.com",
+  "newEmail": "updated.ivan.petrov@example.com"
+}
+
+### Удалить email
+DELETE http://localhost:8080/api/user/email?email=ivan.petrov@example.com
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNzQ3MTcxMzQxLCJleHAiOjE3NDcyMDczNDF9.DCeW25dTG2qqubFWuAIdUsKIU7felNUUNyw_4juQ6m4
+
+
+### Добавить телефон
+POST http://localhost:8080/api/user/phone
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNzQ3NTE3OTkzLCJleHAiOjE3NDc1NTM5OTN9.SZaIBaDHNb5fy9z3yE7Mc1X1gUd4xq_MlyRO3u-Kb5o
+Content-Type: application/json
+
+{
+  "phone": "79207654321"
+}
+
+### Изменить телефон
+PUT http://localhost:8080/api/user/phone
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNzQ3NTE3OTkzLCJleHAiOjE3NDc1NTM5OTN9.SZaIBaDHNb5fy9z3yE7Mc1X1gUd4xq_MlyRO3u-Kb5o
+Content-Type: application/json
+
+{
+  "oldPhone": "79207654321",
+  "newPhone": "79206543210"
+}
+
+### Удалить телефон
+DELETE http://localhost:8080/api/user/phone?phone=79201111111
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNzQ3NTE3OTkzLCJleHAiOjE3NDc1NTM5OTN9.SZaIBaDHNb5fy9z3yE7Mc1X1gUd4xq_MlyRO3u-Kb5o

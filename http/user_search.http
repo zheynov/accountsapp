@@ -1,0 +1,19 @@
+### Поиск по имени и email (name=Ivan, email=ivan.petrov@example.com)
+GET http://localhost:8080/api/user/search?name=Ivan&email=ivan.petrov%40example.com&page=0&size=5
+Accept: application/json
+
+### Поиск по телефону (phone=+375299999999)
+GET http://localhost:8080/api/user/search?phone=79209999999
+Accept: application/json
+
+### Поиск по дате рождения (все, кто младше 01-01-1990)
+GET http://localhost:8080/api/user/search?dateOfBirth=1990-01-01T00:00:00
+Accept: application/json
+
+### Поиск по имени с дефисом (например, Oleg Smirnov)
+GET http://localhost:8080/api/user/search?name=Oleg%20Smirnov
+Accept: application/json
+
+### Без фильтров — просто все пользователи по странице
+GET http://localhost:8080/api/user/search?page=0&size=10
+Accept: application/json

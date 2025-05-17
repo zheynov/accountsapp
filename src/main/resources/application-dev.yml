@@ -1,0 +1,46 @@
+  spring:
+
+    config:
+      activate:
+        on-profile: dev
+
+    datasource:
+      url: jdbc:postgresql://localhost:5432/test
+      username: postgres
+      password: password
+      driver-class-name: org.postgresql.Driver
+
+    jpa:
+      hibernate:
+        ddl-auto: update
+      show-sql: false
+      properties:
+        hibernate.globally_quoted_identifiers: true
+        hibernate:
+          format_sql: true
+      database: postgresql
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+    flyway:
+      enabled: true
+      locations: classpath:db/migration
+
+    springdoc:
+      swagger-ui:
+        path:
+        url: /v3/api-docs
+        config-url: /v3/api-docs/swagger-config
+      api-docs:
+        enabled: false
+
+    jackson:
+      serialization:
+        write-dates-as-timestamps: false
+      date-format: dd.MM.yyyy
+
+    caffeine-cache:
+      caches:
+        userSearchCache:
+          ttl: 5m
+          accessTtl: 5m
+          max-size: 1000

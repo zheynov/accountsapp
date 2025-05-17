@@ -1,0 +1,28 @@
+version: '3.1'
+
+services:
+  be-postgres:
+    container_name: be-postgres
+    image: postgres:13-alpine
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: test
+      TZ: 'GMT+3'
+      PGTZ: 'GMT+3'
+
+  backend:
+    build: .
+    container_name: be-accounts
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+      SPRING_DATASOURCE_URL: jdbc:postgresql://be-postgres:5432/test
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: password
+    depends_on:
+      - be-postgres
